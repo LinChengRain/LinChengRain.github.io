@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- import aframe and then ar.js with image tracking / location based features -->
-    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    
+    <!-- <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!--我们导入了没有 NFT 的 Ar.js 版本，不过支持标记和基于位置的AR-->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <style>
     .arjs-loader {
         height: 100%;
@@ -32,17 +34,17 @@
 </head>
 <body style="margin : 0px; overflow: hidden;">
   <!--图像加载前显示加载中...-->
-  <div class="arjs-loader">
+  <!-- <div class="arjs-loader">
     <div>Loading, please wait...</div>
-  </div>
-  <a-scene
+  </div> -->
+  <!-- <a-scene
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
+  > -->
     <!--我们使用了 cors 代理来避免跨域问题-->
-    <a-nft
+    <!-- <a-nft
       type="nft"
       url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
       smooth="true"
@@ -57,6 +59,16 @@
       >
       </a-entity>
     </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene> -->
+  <a-scene embedded arjs>
+    <a-marker preset="hiro">
+      <a-entity
+        position="0 0 0"
+        scale="0.05 0.05 0.05"
+        gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
+      ></a-entity>
+    </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
 </body>
