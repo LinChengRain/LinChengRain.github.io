@@ -44,50 +44,8 @@
 <!-- rawgithack development URL -->
 <!--<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>-->
 <script src='../../../../aframe/build/aframe-ar-nft.js'></script>
-<script src="../../../../libs/gestures.js"></script>
-<script>
-  // window.onload = function () {
-  //   document
-  //     .querySelector(".say-hi-button")
-  //     .addEventListener("click", function () {
-  //       // 这里你可以更改 <a-scene> 或 <a-entity> 的属性，比如更改3D模型资源、尺寸、位置等，也可以打开链接，触发动作等等。
-  //       alert("Hi there!");
-  //     });
-  // };
-  AFRAME.registerComponent('markerhandler', {
-    init: function () {
-      this.el.sceneEl.addEventListener('markerFound', () => {
-        // redirect to custom URL
-        // window.location = 'https://github.com/AR-js-org/AR.js';
-        // alert("Hi there!");
-      });
-    }
-  });
-  window.addEventListener('load', () => {
-    const camera = document.querySelector('[camera]');
-    const marker = document.querySelector('a-marker');
-    let check;
-
-    marker.addEventListener('markerFound', () => {
-        let cameraPosition = camera.object3D.position;
-        let markerPosition = marker.object3D.position;
-        let distance = cameraPosition.distanceTo(markerPosition)
-
-        check = setInterval(() => {
-            cameraPosition = camera.object3D.position;
-            markerPosition = marker.object3D.position;
-            distance = cameraPosition.distanceTo(markerPosition)
-
-            // do what you want with the distance:
-            console.log(distance);
-        }, 100);
-    });
-
-    marker.addEventListener('markerLost', () => {
-      clearInterval(check);
-    })
-})
-</script>
+<script src="../../../../libs/gesture-handler.js"></script>
+<script src="../../../../libs/gesture-detector.js"></script>
 
 <body style='margin : 0px; overflow: hidden;'>
    <!-- minimal loader shown until image descriptors are loaded -->
@@ -100,19 +58,30 @@
     <a-scene
         vr-mode-ui='enabled: false;'
         renderer="logarithmicDepthBuffer: true; precision: medium;"
+        gesture-detector
+        id="scene"
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
         <a-nft
-            type='nft' url='./aframe/examples/image-tracking/nft/trex/trex-image/trex'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+            type='nft' 
+            url='./aframe/examples/image-tracking/nft/trex/trex-image/trex'
+            smooth='true' 
+            smoothCount='10' 
+            smoothTolerance='0.01' 
+            smoothThreshold='5'
+            raycaster="objects: .clickable"
+            emitevents="true"
+            cursor="fuse: false; rayOrigin: mouse;"
+            >
             <a-entity
-            markerhandler
+                markerhandler
                 gltf-model='./trex/scene.gltf'
                 scale="5 5 5"
                 position="100 0 -200"
                 rotation="-90 0 0"
-                gesture-handler="minScale: 0.25; maxScale: 10"
+                class="clickable"
+                gesture-handler
                 >
             </a-entity>
         </a-nft>
