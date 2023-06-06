@@ -42,16 +42,16 @@
 </style>
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
 <!-- rawgithack development URL -->
-<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+<!-- <script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script> -->
 <script src='../../../../aframe/build/aframe-ar-nft.js'></script>
 <script src="../../../../libs/gesture-handler.js"></script>
 <script src="../../../../libs/gesture-detector.js"></script>
 
 <body style='margin : 0px; overflow: hidden;'>
    <!-- minimal loader shown until image descriptors are loaded -->
-  <!-- <div class="arjs-loader">
+  <div class="arjs-loader">
     <div>Loading, please wait...</div>
-  </div> -->
+  </div>
   <!-- <div class="buttons">
     <button class="say-hi-button">SAY HI!</button>
   </div> -->
@@ -63,7 +63,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-        <!-- <a-nft
+        <a-nft
             type='nft' 
             url='./aframe/examples/image-tracking/nft/trex/trex-image/trex'
             smooth='true' 
@@ -84,12 +84,12 @@
                 gesture-handler
                 >
             </a-entity>
-        </a-nft> -->
-        <a-assets>
+        </a-nft>
+        <!-- <a-assets>
           <a-asset-item id="tree" src="/aframe/examples/image-tracking/nft/trex/scene.gltf"></a-asset-item>
         </a-assets>
       
-        <a-entity gltf-model="#tree"></a-entity>
-		<!-- <a-entity camera="fov: 190"></a-entity> -->
+        <a-entity gltf-model="#tree"></a-entity> -->
+		    <a-entity camera="fov: 190"></a-entity>
     </a-scene>
 </body>
