@@ -63,7 +63,7 @@
         embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-        <a-nft
+        <!-- <a-nft
             type='nft' 
             url='./aframe/examples/image-tracking/nft/trex/trex-image/trex'
             smooth='true' 
@@ -84,7 +84,12 @@
                 gesture-handler
                 >
             </a-entity>
-        </a-nft>
-		<a-entity camera="fov: 190"></a-entity>
+        </a-nft> -->
+        <a-assets>
+          <a-asset-item id="tree" src="./aframe/examples/image-tracking/nft/trex/trex-image/trex/scene.gltf"></a-asset-item>
+        </a-assets>
+      
+        <a-entity gltf-model="#tree"></a-entity>
+		<!-- <a-entity camera="fov: 190"></a-entity> -->
     </a-scene>
 </body>
