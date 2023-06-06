@@ -24,8 +24,10 @@
 <body style="margin : 0px; overflow: hidden;">
   <!--图像加载前显示加载中...-->
   <a-scene>
-    <a-sphere id="sun" position="0 0 0" rotation="0 0 0 " radius="1" color="#f47920">
-      <a-sphere id="mercury" position="4 0 0" radius="0.3" color="#afb4db"></a-sphere>
+    <a-sphere id="sun" position="0 0 0" rotation="0 0 0 " radius="0.1" color="#f47920">
+      <a-sphere id="mercury" position="4 0 0" radius="0.3" color="#afb4db" pivot="-2 0 0"
+      animation="property: rotation; to: 0 0 360; loop: true; dur: 2410; easing: linear"
+      ></a-sphere>
       <a-sphere id="venus" position="6 0 0" radius="0.3" color="#fdb933"></a-sphere>
       <a-sphere id="earth" position="8 0 0" radius="0.3" color="#2a5caa"></a-sphere>
       <a-sphere id="jupiter" position="10 0 0" radius="0.3" color="#f15a22"></a-sphere>
