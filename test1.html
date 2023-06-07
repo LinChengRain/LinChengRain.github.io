@@ -39,12 +39,11 @@
         <a-nft
             type='nft' url='./data/dataNFT/pinball'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-            <a-entity
-                gltf-model='./model/test.gltf'
-                scale="5 5 5"
-                position="150 300 -100"
-                >
-            </a-entity>
+            <a-assets>
+                <a-asset-item id="tree" src="./model/test.gltf"></a-asset-item>
+              </a-assets>
+            
+            <a-gltf-model src="#tree"></a-gltf-model>
         </a-entity>
         </a-nft>
 		<a-entity camera></a-entity>
