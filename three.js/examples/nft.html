@@ -170,15 +170,15 @@
         var threeGLTFLoader = new THREE.GLTFLoader();
         var model;
 
-        threeGLTFLoader.load("./resources/Flamingo.glb", function (gltf) {
+        threeGLTFLoader.load("./resources/1ACM44000300.glft", function (gltf) {
             model = gltf.scene.children[0];
-            model.name = 'Flamingo';
+            model.name = '1ACM44000300';
             const clips = gltf.animations;
 
             var animation = gltf.animations[0];
             var mixer = new THREE.AnimationMixer(gltf.scene);
             mixers.push(mixer);
-            const clip = THREE.AnimationClip.findByName( clips, 'flamingo_flyA_' );
+            const clip = THREE.AnimationClip.findByName( clips, '1ACM44000300_flyA_' );
             var action = mixer.clipAction(clip);
             action.play();
 
