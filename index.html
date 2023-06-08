@@ -30,15 +30,22 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-  <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true; precision: medium;" embedded
-    arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+  <a-scene vr-mode-ui='enabled: false;' 
+  renderer="logarithmicDepthBuffer: true;" 
+  embedded
+  arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'
+  gesture-detector
+  id="scene"
+  >
+
+  <!-- renderer="logarithmicDepthBuffer: true; precision: medium;"  -->
 
     <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
     <a-nft type='nft' 
     url='./data/dataNFT/pinball' 
     smooth='true' 
     smoothCount='10' 
-    smoothTolerance='0.01'
+    smoothTolerance='.01'
     smoothThreshold='5'
     raycaster="objects: .clickable"
     emitevents="true"
@@ -48,11 +55,12 @@
       <a-entity gltf-model='./data/model/0001.gltf' 
       scale="10 10 10" 
       position="0 0 0" 
-      gesture-handler="minScale: 0.25; maxScale: 10"
+      gesture-handler
       class="clickable"
       >
       </a-entity>
-      
+      <!-- gesture-handler="minScale: 0.25; maxScale: 10" -->
+
       <!-- <a-entity gltf-model='./data/model/0002.gltf' scale="10 10 10" position="50 50 0" gesture-handler gesture-detector>
       </a-entity> -->
 
