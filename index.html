@@ -20,7 +20,7 @@
     color: white;
   }
 </style>
-
+<!-- <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script> -->
 <script src="./aframe/build/aframe-ar-nft.js"></script>
 <script src="./libs/gesture-handler.js"></script>
 <script src="./libs/gesture-detector.js"></script>
@@ -34,10 +34,23 @@
     arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
 
     <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-    <a-nft type='nft' url='./data/dataNFT/pinball' smooth='true' smoothCount='10' smoothTolerance='0.01'
-      smoothThreshold='5'>
+    <a-nft type='nft' 
+    url='./data/dataNFT/pinball' 
+    smooth='true' 
+    smoothCount='10' 
+    smoothTolerance='0.01'
+    smoothThreshold='5'
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+    >
 
-      <a-entity gltf-model='./data/model/0001.gltf' scale="10 10 10" position="0 0 0" markerhandler>
+      <a-entity gltf-model='./data/model/0001.gltf' 
+      scale="10 10 10" 
+      position="0 0 0" 
+      gesture-handler="minScale: 0.25; maxScale: 10"
+      class="clickable"
+      >
       </a-entity>
       
       <!-- <a-entity gltf-model='./data/model/0002.gltf' scale="10 10 10" position="50 50 0" gesture-handler gesture-detector>
