@@ -170,7 +170,7 @@
         var threeGLTFLoader = new THREE.GLTFLoader();
         var model;
 
-        threeGLTFLoader.load("./model/0001.gltf", function (gltf) {
+        threeGLTFLoader.load("./data/model/0001.gltf", function (gltf) {
             model = gltf.scene.children[0];
             model.name = '0001';
             const clips = gltf.animations;
