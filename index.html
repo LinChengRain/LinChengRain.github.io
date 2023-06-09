@@ -27,7 +27,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const sceneEl = document.querySelector('a-scene');
-    const entityEl = document.querySelector('a-entity');
+    const entityEl = document.getElementsByClassName('clickable');
 	  const arSystem = sceneEl.systems["mindar-image-system"];
     const startButton = document.querySelector("#example-start-button");
     startButton.addEventListener('click', () => {
