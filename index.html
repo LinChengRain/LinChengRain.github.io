@@ -40,9 +40,9 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-  <div>
+  <!-- <div>
 	  <button id="example-start-button">清除模型</button>
-	</div>
+	</div> -->
   <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
     arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' gesture-detector id="scene"
     ar-hit-test-start>
@@ -51,7 +51,7 @@
       smoothThreshold='5' raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"
       gesture-handler>
 
-      <a-entity gltf-model='./data/model/1ACM44000300_3.gltf' scale="1 1 1" position="100 -50 0" gesture-handler
+      <a-entity gltf-model='./data/model/1ACM44000300_3.gltf' scale="0.5 0.5 0.5" position="100 -50 0" gesture-handler
         class="clickable">
       </a-entity>
     </a-nft>

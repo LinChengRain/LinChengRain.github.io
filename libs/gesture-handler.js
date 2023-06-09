@@ -21,8 +21,10 @@ AFRAME.registerComponent("gesture-handler", {
     });
 
     this.el.sceneEl.addEventListener("markerLost", (e) => {
-      this.isVisible = true;
-      this.el.object3D.visible = true;
+      this.isVisible = false;
+      // 打开可以使模型 不隐藏
+      // this.isVisible = true;
+      // this.el.object3D.visible = true;
     });
   },
 
