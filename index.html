@@ -45,11 +45,10 @@
 	</div> -->
   <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
     arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' gesture-detector id="scene"
-    ar-hit-test-start>
+    stats>
     <a-light type="ambient" color="#222"></a-light>
     <a-nft type='nft' url='./data/dataNFT/pinball' smooth='true' smoothCount='10' smoothTolerance='.01'
-      smoothThreshold='5' raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"
-      gesture-handler>
+      smoothThreshold='5' raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
       <a-entity animation-mixer gltf-model='./data/model/1ACM44000300_3.gltf' scale="0.6 0.6 0.6" position="100 0 0" gesture-handler
         class="clickable">
