@@ -173,14 +173,14 @@
         threeGLTFLoader.load("./data/model/0001.gltf", function (gltf) {
             model = gltf.scene.children[0];
             model.name = '0001';
-            const clips = gltf.animations;
+            // const clips = gltf.animations;
 
-            var animation = gltf.animations[0];
-            var mixer = new THREE.AnimationMixer(gltf.scene);
-            mixers.push(mixer);
-            const clip = THREE.AnimationClip.findByName( clips, '0001_flyA_' );
-            var action = mixer.clipAction(clip);
-            action.play();
+            // var animation = gltf.animations[0];
+            // var mixer = new THREE.AnimationMixer(gltf.scene);
+            // mixers.push(mixer);
+            // const clip = THREE.AnimationClip.findByName( clips, '0001_flyA_' );
+            // var action = mixer.clipAction(clip);
+            // action.play();
 
             root.matrixAutoUpdate = false;
             root.add(model);
@@ -221,7 +221,7 @@
                 renderer.render(scene, camera);
             };
 
-            requestAnimationFrame(animate);
+            // requestAnimationFrame(animate);
         }
     );
     </script>
