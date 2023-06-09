@@ -45,7 +45,7 @@ AFRAME.registerComponent("gesture-handler", {
         // update and clean up
         node.material.needsUpdate = true;
         tmp.dispose()
-      }
+      });
     })
   },
 
