@@ -42,7 +42,24 @@
   <!-- renderer="logarithmicDepthBuffer: true; precision: medium;"  -->
 
     <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-    <a-nft type='nft' 
+    <a-marker
+    url='./data/dataNFT/pinball' 
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+    id="markerA"
+    >
+    <a-entity
+            gltf-model='./data/model/0001.gltf' 
+            scale="10 10 10" 
+            position="100 -50 0" 
+            gesture-handler
+            class="clickable"
+          >
+      </a-entity>
+    </a-marker>
+
+    <!-- <a-nft type='nft' 
     url='./data/dataNFT/pinball' 
     smooth='true' 
     smoothCount='10' 
@@ -59,14 +76,14 @@
       gesture-handler
       class="clickable"
       >
-      </a-entity>
+      </a-entity> -->
       <!-- gesture-handler="minScale: 0.25; maxScale: 10" -->
 
       <!-- <a-entity gltf-model='./data/model/0002.gltf' scale="10 10 10" position="50 50 0" gesture-handler gesture-detector>
       </a-entity> -->
 
-    </a-nft>
-      
+    <!-- </a-nft> -->
+
     <a-entity camera></a-entity>
   </a-scene>
 </body>
