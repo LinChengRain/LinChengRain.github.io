@@ -44,9 +44,9 @@
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-  <!-- <div>
+  <div style="background-color: yellow; width: 100px; height: 100px;z-index: 2;">
 	  <button id="example-start-button">清除模型</button>
-	</div> -->
+	</div>
   <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
     arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' gesture-detector id="scene">
     <a-box color="tomato" depth="2" height="4" width="0.5"></a-box>
@@ -59,7 +59,4 @@
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
-    <div style="background-color: yellow; width: 200px; height: 100px;">
-	  <button id="example-start-button">清除模型</button>
-	</div>
 </body>
