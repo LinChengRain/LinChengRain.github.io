@@ -49,6 +49,7 @@
 	</div> -->
   <a-scene vr-mode-ui='enabled: false;' renderer="logarithmicDepthBuffer: true;" embedded
     arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' gesture-detector id="scene">
+    <a-box color="tomato" depth="2" height="4" width="0.5"></a-box>
     <a-nft type='nft' url='./data/dataNFT/pinball' smooth='true' smoothCount='10' smoothTolerance='.01'
       smoothThreshold='5' raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
@@ -57,7 +58,6 @@
       </a-entity>
     </a-nft>
     <a-entity camera></a-entity>
-
     <a-text value="移除模型"></a-text>
   </a-scene>
 </body>
