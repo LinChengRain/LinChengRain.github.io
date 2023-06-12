@@ -1,4 +1,5 @@
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
 
 <style>
   .arjs-loader {
@@ -49,7 +50,7 @@
       smoothThreshold='5' raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
       <a-entity gltf-model='./data/model/1ACM44000300_3.gltf' scale="0.6 0.6 0.6" position="100 0 0" gesture-handler
-        class="clickable">
+        class="clickable" animation-mixer>
       </a-entity>
     </a-nft>
     <a-entity camera></a-entity>
